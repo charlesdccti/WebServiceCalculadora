@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="CalculadoraService" targetNamespace="http://default_package/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://default_package/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+  <import namespace="http://default_package/" schemaLocation="calculadora_schema1.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="subtrair">
+    <wsdl:part name="parameters" element="tns:subtrair">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="subtrairResponse">
+    <wsdl:part name="parameters" element="tns:subtrairResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="somar">
+    <wsdl:part name="parameters" element="tns:somar">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="multiplicar">
+    <wsdl:part name="parameters" element="tns:multiplicar">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="dividir">
+    <wsdl:part name="parameters" element="tns:dividir">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="dividirResponse">
+    <wsdl:part name="parameters" element="tns:dividirResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="multiplicarResponse">
+    <wsdl:part name="parameters" element="tns:multiplicarResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="somarResponse">
+    <wsdl:part name="parameters" element="tns:somarResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Calculadora">
+    <wsdl:operation name="subtrair">
+      <wsdl:input name="subtrair" message="tns:subtrair">
+    </wsdl:input>
+      <wsdl:output name="subtrairResponse" message="tns:subtrairResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="somar">
+      <wsdl:input name="somar" message="tns:somar">
+    </wsdl:input>
+      <wsdl:output name="somarResponse" message="tns:somarResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="multiplicar">
+      <wsdl:input name="multiplicar" message="tns:multiplicar">
+    </wsdl:input>
+      <wsdl:output name="multiplicarResponse" message="tns:multiplicarResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dividir">
+      <wsdl:input name="dividir" message="tns:dividir">
+    </wsdl:input>
+      <wsdl:output name="dividirResponse" message="tns:dividirResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CalculadoraServiceSoapBinding" type="tns:Calculadora">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="subtrair">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="subtrair">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="subtrairResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="somar">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="somar">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="somarResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="multiplicar">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="multiplicar">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="multiplicarResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dividir">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="dividir">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="dividirResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CalculadoraService">
+    <wsdl:port name="CalculadoraPort" binding="tns:CalculadoraServiceSoapBinding">
+      <soap:address location="http://localhost:8080/CalculadoraSoup/services/CalculadoraPort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
